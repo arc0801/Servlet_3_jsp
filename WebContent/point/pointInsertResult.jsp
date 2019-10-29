@@ -22,6 +22,11 @@
 	int result = pointDAO.insert(con, pointDTO);
 	
 	con.close();
+	
+	String message="등록 실패";
+	if(result>0){
+		message="등록 성공";
+	}
 %>    
 <!DOCTYPE html>
 <html>
@@ -30,6 +35,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1><%= result %></h1>
+	
+	
+<script type="text/javascript">
+	<%-- <% if(result>0){ %>
+		alert("성공");
+	<% } else { %>
+		alert("실패");
+	<% } %> --%>
+	alert('<%= message %>');
+	location.href="./pointList.jsp";
+</script>	
 </body>
 </html>

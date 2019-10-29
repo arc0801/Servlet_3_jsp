@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="./point/pointInsert.jsp">Point Input</a>
+	<a href="./point/pointList.jsp">Point List</a>
 </body>
 </html>
