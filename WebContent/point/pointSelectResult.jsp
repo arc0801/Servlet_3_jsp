@@ -1,5 +1,9 @@
+<%@page import="com.arc.point.PointDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% 
+	PointDTO pointDTO = (PointDTO)request.getAttribute("dto");
+%>    
 <!DOCTYPE html>
 <html>
 <head>

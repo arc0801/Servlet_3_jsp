@@ -28,6 +28,12 @@
 		msg ="수정 성공";
 	}
 	
+	request.setAttribute("msg", msg);
+	request.setAttribute("path", "./pointList.jsp");
+	
+	RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+	view.forward(request, response);
+	
 %>    
 <!DOCTYPE html>
 <html>
@@ -38,9 +44,5 @@
 <body>
 
 
-<script type="text/javascript">
-	alert('<%=msg %>');
-	location.href="./pointList.jsp"
-</script>
 </body>
 </html>

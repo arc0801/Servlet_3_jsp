@@ -16,9 +16,20 @@
 	con.close();
 	
 	String msg = "삭제 실패";
+	
+	//성공하면 성공메세지 alert List로
+	//실패하면 list로
 	if(num>0){
 		msg = "삭제 성공";
+		request.setAttribute("msg", msg);
+		request.setAttribute("path", "./pointList.jsp");
+		
+		RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+		view.forward(request, response);
+	} else {
+		response.sendRedirect("./pointList.jsp");
 	}
+	
 %>    
 <!DOCTYPE html>
 <html>
@@ -28,10 +39,5 @@
 </head>
 <body>
 
-
-<script type="text/javascript">
-	alert('<%= msg %>');
-	location.href="./pointList.jsp";
-</script>	
 </body>
 </html>

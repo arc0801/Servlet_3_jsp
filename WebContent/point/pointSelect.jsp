@@ -19,6 +19,9 @@
 	if(pointDTO == null){
 		response.sendRedirect("./pointList.jsp"); //정보 안가져가도 될 때
 	}else {
+		
+		request.setAttribute("dto", pointDTO);
+		
 		RequestDispatcher view = request.getRequestDispatcher("./pointSelectResult.jsp");
 		view.forward(request, response); //정보 살려서 보내고 싶을 때
 	}
