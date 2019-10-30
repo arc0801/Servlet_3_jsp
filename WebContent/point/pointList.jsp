@@ -43,7 +43,7 @@
 				<!-- for문 안쪽 -->
 				<tr>
 					<td><%= pointDTO.getNum() %></td>
-					<td><a href="./pointSelect.jsp?num=<%= pointDTO.getNum()%>"><%= pointDTO.getName() %><a></a></td>
+					<td><a href="./pointSelect.jsp?num=<%= pointDTO.getNum()%>"><%= pointDTO.getName() %></a></td>
 					<td><%= pointDTO.getTotal() %></td>
 					<td><%= pointDTO.getAvg() %></td>
 				</tr>

@@ -28,22 +28,22 @@
 	
 	<div class="container">
   		<div class="jumbotron">
-    	<h1>Point Select Page</h1>
-    	<ul>
-    		<li>NUM : <%= pointDTO.getNum() %></li>
-    		<li>NAME : <%= pointDTO.getName() %></li>
-    		<li>KOR : <%= pointDTO.getKor() %></li>
-    		<li>ENG : <%= pointDTO.getEng() %></li>
-    		<li>MATH : <%= pointDTO.getMath() %></li>
-    		<li>TOTAL : <%= pointDTO.getTotal() %></li>
-    		<li>AVG : <%= pointDTO.getAvg() %></li>
-    	</ul>
-	</div>
+	    	<h1>Point Select Page</h1>
+	    	<ul>
+	    		<li>NUM : <%= pointDTO.getNum() %></li>
+	    		<li>NAME : <%= pointDTO.getName() %></li>
+	    		<li>KOR : <%= pointDTO.getKor() %></li>
+	    		<li>ENG : <%= pointDTO.getEng() %></li>
+	    		<li>MATH : <%= pointDTO.getMath() %></li>
+	    		<li>TOTAL : <%= pointDTO.getTotal() %></li>
+	    		<li>AVG : <%= pointDTO.getAvg() %></li>
+	    	</ul>
+		</div>
 	
-	<div>
-		<a href="./pointUpdate.jsp?num=<%= pointDTO.getNum() %>" class="btn btn-danger">Update</a>
-		<a href="./pointDeleteResult.jsp?num=<%= pointDTO.getNum() %>" class="btn btn-primary">Delete</a>
+		<div>
+			<a href="./pointUpdate.jsp?num=<%= pointDTO.getNum() %>" class="btn btn-danger">Update</a>
+			<a href="./pointDeleteResult.jsp?num=<%= pointDTO.getNum() %>" class="btn btn-primary">Delete</a>
+		</div>
 	</div>
-	
 </body>
 </html>
