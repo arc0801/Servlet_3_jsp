@@ -5,8 +5,32 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class PointDAO {
+import com.sun.corba.se.internal.Interceptors.PIORB;
 
+public class PointDAO {
+	
+	//update
+	public int update(Connection con, PointDTO pointDTO) throws Exception {
+		int result = 0;
+		
+		String sql = "update point set name=?, kor=?, eng=?, math=?, total=?, avg=? where num=?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, pointDTO.getName());
+		st.setInt(2, pointDTO.getKor());
+		st.setInt(3, pointDTO.getEng());
+		st.setInt(4, pointDTO.getMath());
+		st.setInt(5, pointDTO.getTotal());
+		st.setDouble(6, pointDTO.getAvg());
+		st.setInt(7, pointDTO.getNum());
+		
+		result = st.executeUpdate();
+		
+		st.close();
+		
+		return result;
+	}
+	
 	//selectList
 	public ArrayList<PointDTO> selectList(Connection con) throws Exception {
 		PointDTO pointDTO = null;

@@ -47,7 +47,7 @@
 	</div>
 	
 	<div>
-		<a class="btn btn-danger">Update</a>
+		<a href="./pointUpdate.jsp?num=<%= pointDTO.getNum() %>" class="btn btn-danger">Update</a>
 		<a href="./pointDeleteResult.jsp?num=<%= pointDTO.getNum() %>" class="btn btn-primary">Delete</a>
 	</div>
 	

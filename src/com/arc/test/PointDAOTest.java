@@ -15,7 +15,27 @@ import com.arc.util.DBConnector;
 public class PointDAOTest {
 	
 	@Test
+	public void update() throws Exception {
+		
+		PointDTO pointDTO = new PointDTO();
+		pointDTO.setNum(22);
+		pointDTO.setName("o");
+		pointDTO.setKor(80);
+		pointDTO.setEng(90);
+		pointDTO.setMath(30);
+		pointDTO.setTotal(pointDTO.getKor()+pointDTO.getEng()+pointDTO.getMath());
+		pointDTO.setAvg(pointDTO.getTotal()/3.0);
+		
+		PointDAO pointDAO = new PointDAO();
+		Connection con = DBConnector.getConnection();
+		int result = pointDAO.update(con, pointDTO);
+		
+		assertEquals(1, result);
+	}
+	
+	//@Test
 	public void insertTest() throws Exception {
+		
 		PointDAO pointDAO = new PointDAO();
 		Connection con = DBConnector.getConnection();
 		for(int i=0;i<10;i++) {

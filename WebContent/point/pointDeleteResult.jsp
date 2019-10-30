@@ -11,12 +11,12 @@
 	Connection con = DBConnector.getConnection();
 	int num = Integer.parseInt(request.getParameter("num"));
 	
-	int result = pointDAO.delete(con, num);
+	num = pointDAO.delete(con, num);
 	
 	con.close();
 	
 	String msg = "삭제 실패";
-	if(result>0){
+	if(num>0){
 		msg = "삭제 성공";
 	}
 %>    
