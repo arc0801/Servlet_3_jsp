@@ -23,9 +23,9 @@
 	
 	con.close();
 	
-	String message="등록 실패";
+	String msg="등록 실패";
 	if(result>0){
-		message="등록 성공";
+		msg="등록 성공";
 	}
 %>    
 <!DOCTYPE html>
@@ -33,18 +33,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%-- <script type="text/javascript">
+	location.href="../common/common_result.jsp?msg=<%= msg %>"
+</script> --%>
 </head>
 <body>
-	
-	
-<script type="text/javascript">
-	<%-- <% if(result>0){ %>
-		alert("성공");
-	<% } else { %>
-		alert("실패");
-	<% } %> --%>
-	alert('<%= message %>');
-	location.href="./pointList.jsp";
-</script>	
+	<a href="../common/common_result.jsp?msg=<%= msg%>">result</a>
+
 </body>
 </html>

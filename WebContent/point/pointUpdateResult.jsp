@@ -9,7 +9,6 @@
 	response.setCharacterEncoding("UTF-8");
 	
 	PointDTO pointDTO = new PointDTO();
-	
 	pointDTO.setNum(Integer.parseInt(request.getParameter("num")));
 	pointDTO.setName(request.getParameter("name"));
 	pointDTO.setKor(Integer.parseInt(request.getParameter("kor")));
