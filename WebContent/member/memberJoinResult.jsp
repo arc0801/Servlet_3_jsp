@@ -21,13 +21,15 @@
 	
 	con.close();
 	
+	//int result=0; test용
+	
 	if(result>0){
 		request.setAttribute("msg", "Join Success");
 	}else {
 		request.setAttribute("msg", "Join Fail");
 	}
 	
-	request.setAttribute("path", "./index.jsp");
+	request.setAttribute("path", "../index.jsp");
 	
 	RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
 	view.forward(request, response);

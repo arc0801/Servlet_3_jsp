@@ -15,6 +15,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@ include file="../layout/nav.jsp" %>	
 
 	<div class="container">
 	  <h2>Member Join Form</h2>
@@ -22,27 +23,27 @@
 	  
 	    <div class="form-group">
 	      <label for="id">ID:</label>
-	      <input type="text" class="form-control" id="id" placeholder="Enter ID" name="id">
+	      <input type="text" required="required" class="form-control" id="id" placeholder="Enter ID" name="id">
 	    </div>
 	    
 	    <div class="form-group">
 	      <label for="pw">Password:</label>
-	      <input type="password" class="form-control" id="pw" placeholder="Enter Password" name="pw">
+	      <input type="password" required="required" class="form-control" id="pw" placeholder="Enter Password" name="pw">
 	    </div>
 	   
 	   <div class="form-group">
 	      <label for="name">Name:</label>
-	      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+	      <input type="text" required="required" class="form-control" id="name" placeholder="Enter Name" name="name">
 	    </div>
 	    
 	    <div class="form-group">
 	      <label for="email">E-mail:</label>
-	      <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+	      <input type="email" required="required" class="form-control" id="email" placeholder="Enter Email" name="email">
 	    </div>
 	    
 	    <div class="form-group">
 	      <label for="phone">Phone:</label>
-	      <input type="text" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
+	      <input type="tel" required="required" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
 	    </div>
 	    
 	     <button class="btn btn-info">Submit</button>
