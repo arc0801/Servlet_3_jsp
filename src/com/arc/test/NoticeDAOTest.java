@@ -45,7 +45,7 @@ public class NoticeDAOTest {
 		Connection con = DBConnector.getConnection();
 		for(int i=0;i<5;i++) {
 			NoticeDTO noticeDTO = new NoticeDTO();
-			noticeDTO.setWirter("writer"+i);
+			noticeDTO.setWriter("writer"+i);
 			noticeDTO.setTitle("title"+i);
 			noticeDTO.setContents("contents"+i);
 			noticeDAO.write(con, noticeDTO);

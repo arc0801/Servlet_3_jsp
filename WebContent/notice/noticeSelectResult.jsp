@@ -31,6 +31,8 @@
 <body>
 
 	<div class="container">
+		<h2>Notice Select Page</h2>
+		<br>
 	  <table class="table">
 	    <thead>
 	      <tr class="info"><th>SUBJECT</th><th>NAME</th><th>DATE</th><th>HIT</th></tr>
@@ -38,7 +40,7 @@
 	    <tbody>
 	      <tr>
 	        <td><%= noticeDTO.getTitle() %></td>
-	        <td><%= noticeDTO.getWirter() %></td>
+	        <td><%= noticeDTO.getWriter() %></td>
 	        <td><%= noticeDTO.getReg_date() %></td>
 	        <td><%= noticeDTO.getHit() %></td>
 	      </tr>
@@ -47,8 +49,9 @@
 	  <div class="contents">
 		<%= noticeDTO.getContents() %>
 	  </div>
-	  <a href="./noticeUpdate.jsp" class="btn btn-info">Update</a>
-	  <a href="./noticeDelete.jsp" class="btn btn-danger">Delete</a>
+	  <a href="./noticeUpdate.jsp?num=<%= noticeDTO.getNum() %>" class="btn btn-info">Update</a>
+	  <a href="./noticeDeleteResult.jsp?num=<%= noticeDTO.getNum() %>" class="btn btn-danger">Delete</a>
+		<a href="./noticeList.jsp" class="btn btn-primary">List</a>
 	</div>
 	
 </body>

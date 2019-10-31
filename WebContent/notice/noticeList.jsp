@@ -45,7 +45,7 @@
 	      <tr>
 	        <td><%= noticeDTO.getNum() %></td>
 	        <td><a href="./noticeSelect.jsp?num=<%= noticeDTO.getNum() %>"><%= noticeDTO.getTitle() %></a></td>
-	        <td><%= noticeDTO.getWirter() %></td>
+	        <td><%= noticeDTO.getWriter() %></td>
 	        <td><%= noticeDTO.getReg_date() %></td>
 	        <td><%= noticeDTO.getHit() %></td>
 	      </tr>

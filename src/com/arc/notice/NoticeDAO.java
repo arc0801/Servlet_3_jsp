@@ -24,7 +24,7 @@ public class NoticeDAO {
 			noticeDTO = new NoticeDTO();
 			noticeDTO.setNum(rs.getInt("num"));
 			noticeDTO.setTitle(rs.getString("title"));
-			noticeDTO.setWirter(rs.getString("writer"));
+			noticeDTO.setWriter(rs.getString("writer"));
 			noticeDTO.setContents(rs.getString("contents"));
 			noticeDTO.setReg_date(rs.getDate("reg_date"));
 			noticeDTO.setHit(rs.getInt("hit"));
@@ -48,7 +48,7 @@ public class NoticeDAO {
 			NoticeDTO noticeDTO = new NoticeDTO();
 			noticeDTO.setNum(rs.getInt("num"));
 			noticeDTO.setTitle(rs.getString("title"));
-			noticeDTO.setWirter(rs.getString("writer"));
+			noticeDTO.setWriter(rs.getString("writer"));
 			noticeDTO.setReg_date(rs.getDate("reg_date"));
 			noticeDTO.setHit(rs.getInt("hit"));
 			
@@ -69,7 +69,7 @@ public class NoticeDAO {
 		
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setString(1, noticeDTO.getTitle());
-		st.setString(2, noticeDTO.getWirter());
+		st.setString(2, noticeDTO.getWriter());
 		st.setString(3, noticeDTO.getContents());
 		
 		result = st.executeUpdate();

@@ -18,7 +18,7 @@
 
 	<div class="container">
 	  <h2>Notice Write Form</h2>
-	  <form action="./noticeWriteResult.jsp">
+	  <form action="./noticeWriteResult.jsp" method="post">
 	  
 	    <div class="form-group">
 	      <label for="title">Title:</label>

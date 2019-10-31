@@ -11,7 +11,7 @@
 	NoticeDTO noticeDTO = new NoticeDTO();
 	
 	noticeDTO.setTitle(request.getParameter("title"));
-	noticeDTO.setWirter(request.getParameter("writer"));
+	noticeDTO.setWriter(request.getParameter("writer"));
 	noticeDTO.setContents(request.getParameter("contents"));
 	
 	NoticeDAO noticeDAO = new NoticeDAO();
