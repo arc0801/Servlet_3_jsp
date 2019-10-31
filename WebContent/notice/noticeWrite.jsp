@@ -32,10 +32,10 @@
 	    
 	    <div class="form-group">
 	      <label for="contents">Contents:</label>
-	      <textarea  rows="20" cols="50" class="form-control" id="title" placeholder="Enter Contents" name="contents"></textarea>
+	      <textarea  rows="20" cols="50" class="form-control" id="contents" placeholder="Enter Contents" name="contents"></textarea>
 	    </div>
 	    
-	     <button type="submit" class="btn btn-info">Submit</button>
+	     <button class="btn btn-info">Submit</button>
 	    </form>
 	</div>
 

@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.arc.point.PointDTO;
-
 public class NoticeDAO {
 
 	//selectOne
