@@ -1,6 +1,3 @@
-<%@page import="com.arc.util.DBConnector"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="com.arc.member.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
@@ -23,11 +20,6 @@
 </head>
 <body>
 <%@ include file="../layout/nav.jsp" %>
-<%
-	MemberDAO memberDAO = new MemberDAO();
-	Connection con = DBConnector.getConnection();
-	memberDTO = memberDAO.memberLogin(con, memberDTO);
-%>
 
 	<div class="container">
 	  <h2>Member Update Form</h2>
@@ -40,7 +32,7 @@
 	    
 	    <div class="form-group">
 	      <label for="pw">Password:</label>
-	      <input type="password" required="required" class="form-control" id="pw" placeholder="Enter Password" name="pw">
+	      <input type="password" value="<%= memberDTO.getPw() %>" required="required" class="form-control" id="pw" placeholder="Enter Password" name="pw">
 	    </div>
 	   
 	   <div class="form-group">

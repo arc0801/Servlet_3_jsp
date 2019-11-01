@@ -11,8 +11,18 @@ import com.arc.member.MemberDTO;
 import com.arc.util.DBConnector;
 
 public class MemberDAOTest {
-
+	
 	@Test
+	public void memberDeleteTest() throws Exception {
+		
+		MemberDAO memberDAO = new MemberDAO();
+		Connection con = DBConnector.getConnection();
+		int result = memberDAO.memberDelete(con, "b");
+		
+		assertEquals(1, result);
+	}
+	
+	//@Test
 	public void memberUpdateTest() throws Exception {
 		
 		MemberDTO memberDTO = new MemberDTO();

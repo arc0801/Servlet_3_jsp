@@ -17,6 +17,21 @@
 	
 	con.close();
 	
+	//쿠키 발행
+	//쿠키 생성시 생성자에 키와 벨류 입력
+	Cookie cookie = new Cookie("name", "iu");
+	
+	//쿠키가 적용되는 Path 설정 : 보통 context path 적용
+	cookie.setPath(request.getContextPath());
+	
+	//쿠키의 유효시간
+	//단위 초단위
+	//설정을 하지않으면 웹브라우저가 종료되면 같이 종료 됨.
+	cookie.setMaxAge(3600);
+	
+	//쿠키를 클라이언트로 전송
+	response.addCookie(cookie);
+	
 %>    
 <!DOCTYPE html>
 <html>

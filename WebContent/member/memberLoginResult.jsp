@@ -12,6 +12,23 @@
 	memberDTO.setId(request.getParameter("id"));
 	memberDTO.setPw(request.getParameter("pw"));
 	
+	///////////
+	String check = request.getParameter("remember");
+	//System.out.println(check);
+	
+	if(check != null){
+		Cookie cookie = new Cookie("id", memberDTO.getId());
+		cookie.setPath(request.getContextPath());
+		cookie.setMaxAge(3600);
+		response.addCookie(cookie);
+	}else { //내용이 없는 쿠키를 넣어 발행하겠다
+		Cookie cookie = new Cookie("id", "");
+		cookie.setPath(request.getContextPath());
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
+	}
+	
+	
 	MemberDAO memberDAO = new MemberDAO();
 	Connection con = DBConnector.getConnection();
 	memberDTO = memberDAO.memberLogin(con, memberDTO);

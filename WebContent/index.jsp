@@ -21,5 +21,16 @@
 		<% } %>
 	</div>
 	
+	<div class="container">
+		<%
+			Cookie[] cookies = request.getCookies();
+			for(int i=0;i<cookies.length;i++){
+		%>
+			<h1>Name : <%= cookies[i].getName() %></h1>
+			<h1>Value : <%= cookies[i].getValue() %></h1>
+		<%
+			}
+		%>
+	</div>
 </body>
 </html>

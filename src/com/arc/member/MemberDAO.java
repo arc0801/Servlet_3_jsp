@@ -6,6 +6,19 @@ import java.sql.ResultSet;
 
 public class MemberDAO {
 	
+	public int memberDelete(Connection con, String id) throws Exception {
+		int result = 0;
+		
+		String sql = "delete member where id=?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, id);
+		
+		result = st.executeUpdate();
+		
+		return result;
+	}
+	
 	public int memberUpdate(Connection con, MemberDTO memberDTO) throws Exception{
 		int result = 0;
 		
@@ -51,7 +64,7 @@ public class MemberDAO {
 	public int memberJoin(Connection con, MemberDTO memberDTO) throws Exception{
 		int result = 0;
 		
-		String sql = "insert into member values(?,?,?,?,?,1)";
+		String sql = "insert into member values(?,?,?,?,?,3)";
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setString(1, memberDTO.getId());
 		st.setString(2, memberDTO.getPw());
