@@ -1,5 +1,9 @@
+<%@page import="com.arc.member.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+%>    
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -18,8 +22,13 @@
       <li><a href="<%= request.getContextPath() %>/notice/noticeList.jsp">Notice</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="<%= request.getContextPath() %>/member/memberJoinForm.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="<%= request.getContextPath() %>/member/memberLoginForm.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <% if(memberDTO != null) { %>
+      <li><a href="<%= request.getContextPath() %>/member/memberMypage.jsp"><span class="glyphicon glyphicon-user"></span> My Page</a></li>
+      <li><a href="<%= request.getContextPath() %>/member/memberLogout.jsp"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+	 <% }else { %>
+	  <li><a href="<%= request.getContextPath() %>/member/memberJoinForm.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="<%= request.getContextPath() %>/member/memberLoginForm.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> 	
+   	<% } %>
     </ul>
   </div>
 </nav>

@@ -14,7 +14,7 @@
 
 <div class="container">
   <h2>Login Form</h2>
-  <form action="/action_page.php">
+  <form action="./memberLoginResult.jsp" method="post">
     <div class="form-group">
       <label for="id">ID:</label>
       <input type="text" class="form-control" id="id" placeholder="Enter ID" name="id">

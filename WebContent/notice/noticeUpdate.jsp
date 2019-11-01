@@ -31,7 +31,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<%@ include file="../layout/nav.jsp" %>
+<%
+	if(memberDTO == null || !memberDTO.getId().equals(noticeDTO.getWriter())) { 
+			request.setAttribute("msg", "해당 권한이 없습니다.");
+			request.setAttribute("path", "../index.jsp");
+			
+			RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+			view.forward(request, response);
+	}
+%>
 	<div class="container">
 	  <h2>Notice Update Page</h2>
 	  <form action="./noticeUpdateResult.jsp" method="post">

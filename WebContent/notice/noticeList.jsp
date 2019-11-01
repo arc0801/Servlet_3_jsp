@@ -1,3 +1,4 @@
+<%@page import="com.arc.member.MemberDTO"%>
 <%@page import="com.arc.notice.NoticeDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.arc.util.DBConnector"%>
@@ -15,6 +16,7 @@
 	ArrayList<NoticeDTO> ar = noticeDAO.selectList(con);
 	
 	con.close();
+	
 %>    
 <!DOCTYPE html>
 <html>
@@ -31,6 +33,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@ include file="../layout/nav.jsp" %>
 
 	<div class="container">
 	  <h2>Notice</h2>
@@ -40,8 +43,7 @@
 	    </thead>
 	    <tbody>
 	    	<% for(int i=0;i<ar.size();i++){
-	    			NoticeDTO noticeDTO = ar.get(i);
-	    	%>
+	    			NoticeDTO noticeDTO = ar.get(i); %>
 	      <tr>
 	        <td><%= noticeDTO.getNum() %></td>
 	        <td><a href="./noticeSelect.jsp?num=<%= noticeDTO.getNum() %>"><%= noticeDTO.getTitle() %></a></td>
@@ -52,7 +54,10 @@
 			<% } %>
 	    </tbody>
 	  </table>
-	  <a href="./noticeWrite.jsp" class="btn btn-info">Write</a>
+	  
+	  <% if(memberDTO != null && memberDTO.getGrade() == 0) { %>
+	  	<a href="./noticeWrite.jsp" class="btn btn-info">Write</a>
+	  <% } %>
 	</div>
 
 </body>

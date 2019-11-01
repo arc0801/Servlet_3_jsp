@@ -29,6 +29,7 @@
 </style>
 </head>
 <body>
+<%@ include file="../layout/nav.jsp" %>
 
 	<div class="container">
 		<h2>Notice Select Page</h2>
@@ -49,8 +50,10 @@
 	  <div class="contents">
 		<%= noticeDTO.getContents() %>
 	  </div>
-	  <a href="./noticeUpdate.jsp?num=<%= noticeDTO.getNum() %>" class="btn btn-info">Update</a>
-	  <a href="./noticeDeleteResult.jsp?num=<%= noticeDTO.getNum() %>" class="btn btn-danger">Delete</a>
+	  <% if(memberDTO != null && memberDTO.getId().equals(noticeDTO.getWriter())) {%>
+	  	<a href="./noticeUpdate.jsp?num=<%= noticeDTO.getNum() %>" class="btn btn-info">Update</a>
+	 	<a href="./noticeDeleteResult.jsp?num=<%= noticeDTO.getNum() %>" class="btn btn-danger">Delete</a>
+	  <% } %>
 		<a href="./noticeList.jsp" class="btn btn-primary">List</a>
 	</div>
 	

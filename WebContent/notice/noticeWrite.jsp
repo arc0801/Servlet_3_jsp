@@ -15,6 +15,16 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%@ include file="../layout/nav.jsp" %>
+<%
+	if(memberDTO == null || memberDTO.getGrade() != 0) {
+		request.setAttribute("msg", "해당 권한이 없습니다.");
+		request.setAttribute("path", "../index.jsp");
+		
+		RequestDispatcher view = request.getRequestDispatcher("../common/common_result.jsp");
+		view.forward(request, response);
+	}
+%>
 
 	<div class="container">
 	  <h2>Notice Write Form</h2>
@@ -27,7 +37,7 @@
 	    
 	    <div class="form-group">
 	      <label for="writer">Writer:</label>
-	      <input type="text" class="form-control" id="writer" placeholder="Enter Writer" name="writer">
+	      <input type="text" value="<%= memberDTO.getId() %>" readonly="readonly" class="form-control" id="writer" placeholder="Enter Writer" name="writer">
 	    </div>
 	    
 	    <div class="form-group">
